@@ -12,9 +12,13 @@
 <p>ID: <span th:text="${user.id}"></span></p>
 <p>Email: <span th:text="${user.email}"></span></p>
 
+
 <a href="/users">Назад</a>
 
-
+<form action="@{/users/{id}" method="post">
+    <input type="hidden" name="_method" value="delete" />
+    <button type="submit">Удалить пользователя</button>
+</form>
 
 </body>
 </html>

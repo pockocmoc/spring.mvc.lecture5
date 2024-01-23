@@ -15,13 +15,23 @@ public class UserService {
 
 
     public List<User> getAllUsers() {
-        userRepository.save(new User(null, "Marat", "pockocmoc@inbox.ru"));
+//        userRepository.save(new User(null, "Marat", "pockocmoc@inbox.ru"));
 
         return userRepository.findAll();
     }
 
     public User getUserById(Long id) {
         return userRepository.findById(id).get();
+    }
+
+    public User addUser(User user) {
+        userRepository.save(user);
+        return user;
+    }
+
+    public String deleteById(Long id) {
+        userRepository.deleteById(id);
+        return null;
     }
 
 }
